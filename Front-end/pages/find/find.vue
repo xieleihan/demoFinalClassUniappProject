@@ -1,12 +1,12 @@
 <template>
 	<view class="findMain">
-		<view class="logoImages">
-
-		</view>
+		<view class="logoImages"></view>
 		<view class="border">
-			<form @submit="onSubmit" class="formInput">
+			<form @submit.prevent="onSubmit" class="formInput">
 				<input type="text" placeholder="请输入你需要的内容" v-model="searchQuery" class="Finput" />
-				<button type="submit" class="searchImages"></button>
+				<button type="submit" class="searchInput">
+					<span class="iconfont icon-sousuo butFont"></span>
+				</button>
 			</form>
 		</view>
 	</view>
@@ -47,14 +47,14 @@
 	}
 </script>
 
-<style>
+<style scoped>
+	@import url('/static/iconfont/iconfont.css');
+	/* 引入iconfont.css文件 */
+
 	.findMain {
-		width: 100dvw;
-		height: 100dvh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		position: relative;
 	}
 
 	.findMain .logoImages {
@@ -63,18 +63,52 @@
 		background: url('/static/findPagesImages/findLogo.png');
 		background-repeat: no-repeat;
 		background-size: cover;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	.findMain .border {
 		width: 80%;
-		height: 50%;
+		position: absolute;
+		top: 52%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.findMain .border .formInput {
+		display: inline-block;
+		width: 100%;
+		/* 确保表单宽度为容器宽度 */
 	}
 
 	.findMain .border .Finput {
-		width: 90%;
-		height: 10%;
+		display: inline-block;
+		width: calc(100% - 50px);
+		height: 40px;
 		border: 4rpx #ccc solid;
 		border-radius: 20rpx;
-		padding: 20rpx;
+		padding: 10px;
+		box-sizing: border-box;
+		/* 确保padding包含在内 */
+	}
+
+	.findMain .border .searchInput {
+		display: inline-block;
+		font-family: "iconfont" !important;
+		/* 确保使用 iconfont 字体 */
+		width: 40px;
+		height: 40px;
+		border: none;
+		background: transparent;
+		padding: 0;
+		/* margin-left: 10px; */
+	}
+
+	.findMain .border .formInput .searchInput .butFont {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 </style>

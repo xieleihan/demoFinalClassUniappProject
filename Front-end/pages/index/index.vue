@@ -50,7 +50,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.main {
 		width: 100dvw;
 		height: 100dvh;
