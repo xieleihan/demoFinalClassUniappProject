@@ -53,7 +53,7 @@
 
 	.findMain {
 		width: 100vw;
-		height: 100vh;
+		height: calc(100dvh - 190rpx);
 		position: relative;
 	}
 

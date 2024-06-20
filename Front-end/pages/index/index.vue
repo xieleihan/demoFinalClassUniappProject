@@ -53,7 +53,7 @@
 <style scoped>
 	.main {
 		width: 100dvw;
-		height: 100dvh;
+		height: calc(100dvh - 190rpx);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

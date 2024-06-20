@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/Longin/Longin",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
@@ -16,6 +22,12 @@
 			"path": "pages/find/find",
 			"style": {
 				"navigationBarTitleText": "查找"
+			}
+		},
+		{
+			"path": "pages/Signin/Signin",
+			"style": {
+				"navigationBarTitleText": "注册"
 			}
 		}
 	],
