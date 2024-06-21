@@ -11,15 +11,46 @@
 			</swiper>
 		</view>
 		<view class="bigTitle">云上书库</view>
-		<view class="item">
-			<view class="images"></view>
-			<view class="bookInfo">
-				<view class="title">你好</view>
-				<view class="info">
-					你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
+		<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper"
+			@scrolltolower="lower" @scroll="scroll">
+			<view class="item">
+				<view class="images"></view>
+				<view class="bookInfo">
+					<view class="title">你好</view>
+					<view class="info">
+						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
+					</view>
 				</view>
 			</view>
-		</view>
+			<view class="item">
+				<view class="images"></view>
+				<view class="bookInfo">
+					<view class="title">你好</view>
+					<view class="info">
+						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
+					</view>
+				</view>
+			</view>
+			<view class="item">
+				<view class="images"></view>
+				<view class="bookInfo">
+					<view class="title">你好</view>
+					<view class="info">
+						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
+					</view>
+				</view>
+			</view>
+			<view class="item">
+				<view class="images"></view>
+				<view class="bookInfo">
+					<view class="title">你好</view>
+					<view class="info">
+						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+
 	</view>
 </template>
 
@@ -51,6 +82,13 @@
 </script>
 
 <style scoped>
+	.scroll-Y {
+		height: calc(100dvh - 190rpx - 400rpx);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
 	.main {
 		width: 100dvw;
 		height: calc(100dvh - 190rpx);
@@ -67,14 +105,14 @@
 
 	.main .item {
 		width: 90%;
-		height: 15%;
+		height: 30%;
 		border: 1rpx black solid;
 		border-radius: 20rpx;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
 		align-items: center;
-		margin-top: 50rpx;
+		margin: 50rpx auto;
 	}
 
 	.main .item .images {

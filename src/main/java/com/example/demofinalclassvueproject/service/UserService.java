@@ -1,6 +1,8 @@
 package com.example.demofinalclassvueproject.service;
 
+import com.example.demofinalclassvueproject.mapper.UserInfoMapper;
 import com.example.demofinalclassvueproject.model.User;
+import com.example.demofinalclassvueproject.model.UserInfo;
 import com.example.demofinalclassvueproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -11,6 +13,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserInfoMapper userInfoMapper;
 
 //    public void registerUser(User user) {
 //        // 可以在这里添加密码加密等逻辑
@@ -34,4 +39,9 @@ public class UserService {
         }
         return false;
     }
+
+    public UserInfo getUserInfoByUsername(String username) {
+        return userInfoMapper.getUserInfoByUsername(username);
+    }
+
 }

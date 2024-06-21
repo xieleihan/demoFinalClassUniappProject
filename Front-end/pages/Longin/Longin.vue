@@ -45,12 +45,14 @@
 						console.log('Response from server:', res.data);
 
 						if (res.data.success) {
+
 							// 登录成功处理，例如跳转到主页
 							uni.showToast({
 								title: '登录成功',
 								icon: 'success',
 								duration: 2000,
 								success: () => {
+									localStorage.setItem('username', this.username); // 保存用户名
 									uni.switchTab({
 										url: '/pages/index/index'
 									});

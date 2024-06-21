@@ -2,12 +2,13 @@
 	<view class="main">
 		<view class="content">
 			<view class="top">
-				<view class="topAvatar"></view>
-				<view class="userNameInfo">Hello World!</view>
+				<view class="topAvatar" :style="{ backgroundImage: 'url(' + userPic + ')' }"></view>
+				<view class="userNameInfo">{{ username }}</view>
 			</view>
 			<view class="setting">
-				<view class="btn changePassword">修改密码</view>
-				<view class="btn exitLogin">退出登录</view>
+				<view class="btn changePassword">&gt; 修改密码</view>
+				<view class="btn uploadFile">&gt; 上传文件</view>
+				<view class="btn exitLogin">&gt; 退出登录</view>
 			</view>
 			<view class="about">Copyright&copy;2024 SouthAki,All rights reserved.</view>
 		</view>
@@ -18,14 +19,48 @@
 	export default {
 		data() {
 			return {
-
-			}
+				username: '', // 用于存储用户名
+				userPic: '' // 用于存储 Base64 编码的图片
+			};
+		},
+		mounted() {
+			this.username = localStorage.getItem('username'); // 获取保存的用户名
+			this.fetchUserPic();
 		},
 		methods: {
-
+			fetchUserPic() {
+				uni.request({
+					url: `http://localhost:9807/user/getUserPic?username=${this.username}`, // 将参数直接拼接在 URL 中，使用模板字符串
+					method: 'GET',
+					success: (res) => {
+						if (res.data && res.data.length > 0) {
+							this.userPic = 'data:image/png;base64,' + res.data; // 设置 Base64 图片
+						} else {
+							console.error('Empty or invalid Base64 data received.');
+						}
+					},
+					fail: (err) => {
+						console.error('Error fetching user pic:', err);
+					}
+				});
+			},
+			base64ToArrayBuffer(base64) {
+				const binaryString = window.atob(base64);
+				const len = binaryString.length;
+				const bytes = new Uint8Array(len);
+				for (let i = 0; i < len; i++) {
+					bytes[i] = binaryString.charCodeAt(i);
+				}
+				return bytes.buffer;
+			},
+			logout() {
+				localStorage.removeItem('username');
+				// 其他的登出逻辑，比如跳转到登录页面
+			}
 		}
-	}
+	};
 </script>
+
 
 <style scoped>
 	.main {
@@ -66,6 +101,8 @@
 		height: 100rpx;
 		border-radius: 50%;
 		background-color: red;
+		background-position: center;
+		background-size: cover;
 		position: absolute;
 		top: 50%;
 		left: 15%;
@@ -88,6 +125,36 @@
 
 	.main .content .setting .btn {
 		background-color: #ccc;
+		width: 100%;
+		height: 60rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50rpx;
+	}
+
+	.main .content .setting .changePassword:hover {
+		background-color: skyblue;
+		width: 100%;
+		height: 60rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50rpx;
+	}
+
+	.main .content .setting .exitLogin:hover {
+		background-color: lightcoral;
+		width: 100%;
+		height: 60rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50rpx;
+	}
+
+	.main .content .setting .uploadFile:hover {
+		background-color: lightgreen;
 		width: 100%;
 		height: 60rpx;
 		display: flex;
