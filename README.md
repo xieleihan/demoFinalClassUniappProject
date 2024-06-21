@@ -52,7 +52,7 @@
     |   |   |       ├─── model
     |   |   |       ├─── repository
     |   |   |       ├─── service
-    |   |   |       └─── DemoJavaEeProjectApplication.java       # 启动类
+    |   |   |       └─── DemoFinalClassVueProjectApplication.java       # 启动类
     |   |   └─── resources
     |   |       ├─── static
     |   |       ├─── banner.txt     # Spring启动去除bug
@@ -74,10 +74,10 @@ git clone git@github.com:xieleihan/demoFinalClassUniappProject.git
 <div align="left">
  <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="45" alt="intellij logo"  />
  <img width="6" />
- <img src="	https://hx.dcloud.net.cn/static/icon/hx.png" height="45" alt="spring logo"  />
+ <img src="	https://hx.dcloud.net.cn/static/icon/hx.png" height="45" alt="hx logo"  />
  </div>
 
-idea运行`DemoJavaEeProjectApplication.java`这个文件,然后在HbuilderX运行起页面
+idea运行`DemoFinalClassVueProjectApplication.java`这个文件,然后在HbuilderX运行起页面
 
 ### 数据库建立
 
