@@ -35,6 +35,19 @@
 			"style": {
 				"navigationBarTitleText": "上传文件"
 			}
+		},
+		{
+			"path": "pages/aboutProjectPages/aboutProjectPages",
+			"style": {
+				"navigationBarTitleText": "关于项目"
+			}
+		},
+		{
+			"path" : "pages/Results/Results",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {

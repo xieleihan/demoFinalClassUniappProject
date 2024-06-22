@@ -2,12 +2,8 @@
 	<view class="findMain">
 		<view class="logoImages"></view>
 		<view class="border">
-			<form @submit.prevent="onSubmit" class="formInput">
-				<input type="text" placeholder="请输入你需要的内容" v-model="searchQuery" class="Finput" />
-				<button type="submit" class="searchInput">
-					<span class="iconfont icon-sousuo butFont"></span>
-				</button>
-			</form>
+			<input type="text" placeholder="请输入你需要的内容" v-model="searchQuery" class="Finput" />
+			<button @click="submitVal" type="default" class="searchInput iconfont icon-sousuo"></button>
 		</view>
 	</view>
 </template>
@@ -20,28 +16,13 @@
 			}
 		},
 		methods: {
-			onSubmit(event) {
-				// 阻止表单的默认提交行为
-				event.preventDefault();
-
-				// 构建请求URL
-				const baseUrl = 'https://example.com/search'; // 替换为你的基础URL
-				const queryParams = `?query=${encodeURIComponent(this.searchQuery)}`;
-				const requestUrl = `${baseUrl}${queryParams}`;
-
-				// 发送GET请求
-				uni.request({
-					url: requestUrl,
-					method: 'GET',
-					success: (res) => {
-						console.log('请求成功:', res);
-						// 在这里处理请求成功的逻辑
-					},
-					fail: (err) => {
-						console.error('请求失败:', err);
-						// 在这里处理请求失败的逻辑
-					}
-				});
+			submitVal() {
+				if (this.searchQuery.trim() !== '') {
+					// 通过 URL 传递搜索查询参数
+					uni.navigateTo({
+						url: `/pages/Results/Results?query=${this.searchQuery}`
+					});
+				}
 			}
 		}
 	}

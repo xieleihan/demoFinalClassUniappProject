@@ -8,9 +8,10 @@
 			<view class="setting">
 				<view class="btn changePassword">&gt; 修改密码</view>
 				<view class="btn uploadFile" @click="goToUpLoadFilePage">&gt; 上传文件</view>
+				<view class="btn adminBook">&gt; 管理书库</view>
 				<view class="btn exitLogin">&gt; 退出登录</view>
 			</view>
-			<view class="about">Copyright&copy;2024 SouthAki,All rights reserved.</view>
+			<view class="about" @click="goToAboutProjectPages">Copyright&copy;2024 SouthAki,All rights reserved.</view>
 		</view>
 	</view>
 </template>
@@ -33,6 +34,11 @@
 				uni.navigateTo({
 					url: '/pages/upLoadFile/upLoadFile' // 注册页面的路径，根据实际情况修改
 				});
+			},
+			goToAboutProjectPages() {
+				uni.navigateTo({
+					url: '/pages/aboutProjectPages/aboutProjectPages'
+				})
 			},
 			fetchUserPic() {
 				uni.request({
@@ -79,7 +85,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 	}
 
 	.main .content {
@@ -161,6 +166,16 @@
 
 	.main .content .setting .uploadFile:hover {
 		background-color: lightgreen;
+		width: 100%;
+		height: 60rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50rpx;
+	}
+
+	.main .content .setting .adminBook:hover {
+		background-color: lightseagreen;
 		width: 100%;
 		height: 60rpx;
 		display: flex;
