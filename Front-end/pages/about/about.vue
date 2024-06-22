@@ -7,7 +7,7 @@
 			</view>
 			<view class="setting">
 				<view class="btn changePassword">&gt; 修改密码</view>
-				<view class="btn uploadFile">&gt; 上传文件</view>
+				<view class="btn uploadFile" @click="goToUpLoadFilePage">&gt; 上传文件</view>
 				<view class="btn exitLogin">&gt; 退出登录</view>
 			</view>
 			<view class="about">Copyright&copy;2024 SouthAki,All rights reserved.</view>
@@ -28,6 +28,12 @@
 			this.fetchUserPic();
 		},
 		methods: {
+			goToUpLoadFilePage() {
+				// 使用 uni.navigateTo 方法跳转到注册页面
+				uni.navigateTo({
+					url: '/pages/upLoadFile/upLoadFile' // 注册页面的路径，根据实际情况修改
+				});
+			},
 			fetchUserPic() {
 				uni.request({
 					url: `http://localhost:9807/user/getUserPic?username=${this.username}`, // 将参数直接拼接在 URL 中，使用模板字符串

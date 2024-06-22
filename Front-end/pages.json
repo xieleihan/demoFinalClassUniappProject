@@ -29,6 +29,12 @@
 			"style": {
 				"navigationBarTitleText": "注册"
 			}
+		},
+		{
+			"path": "pages/upLoadFile/upLoadFile",
+			"style": {
+				"navigationBarTitleText": "上传文件"
+			}
 		}
 	],
 	"globalStyle": {

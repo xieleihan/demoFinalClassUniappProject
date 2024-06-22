@@ -33,5 +33,15 @@ insert into `userinfo` values(1,'southaki1','/9j/4AAQSkZJRgABAQAASABIAAD/2wBDAAc
 
 SHOW VARIABLES LIKE 'character_set%';
 SHOW VARIABLES LIKE 'collation%';
+
+-- 书籍信息
+drop table if exists `bookinfo`;
+create table bookinfo(
+	id int auto_increment primary key,
+    bookpic longblob not null,
+    booktitle varchar(200) not null,
+    bookinfo varchar(200) not null
+);
+select * from bookinfo;
 ```
 

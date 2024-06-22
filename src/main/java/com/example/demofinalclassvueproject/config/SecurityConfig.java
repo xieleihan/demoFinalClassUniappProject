@@ -18,6 +18,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/register", "/login").permitAll() // 允许所有人访问注册和登录端点
                         .requestMatchers("/user/getUserPic").permitAll()
+                        .requestMatchers("/bookinfo/upload").permitAll()
                         .anyRequest().authenticated() // 其他请求需要身份验证
                 )
                 .httpBasic(); // 使用基本认证
