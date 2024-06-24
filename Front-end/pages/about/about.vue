@@ -6,10 +6,10 @@
 				<view class="userNameInfo">{{ username }}</view>
 			</view>
 			<view class="setting">
-				<view class="btn changePassword">&gt; 修改密码</view>
+				<view class="btn changePassword" @click="goToChangePassword">&gt; 修改密码</view>
 				<view class="btn uploadFile" @click="goToUpLoadFilePage">&gt; 上传文件</view>
-				<view class="btn adminBook">&gt; 管理书库</view>
-				<view class="btn exitLogin">&gt; 退出登录</view>
+				<view class="btn adminBook" @click="goToAdminPages">&gt; 管理书库</view>
+				<view class="btn exitLogin" @click="goToLogninPages">&gt; 退出登录</view>
 			</view>
 			<view class="about" @click="goToAboutProjectPages">Copyright&copy;2024 SouthAki,All rights reserved.</view>
 		</view>
@@ -29,6 +29,21 @@
 			this.fetchUserPic();
 		},
 		methods: {
+			goToAdminPages() {
+				uni.navigateTo({
+					url: '/pages/adminPages/adminPages'
+				})
+			},
+			goToLogninPages() {
+				uni.navigateTo({
+					url: '/pages/Longin/Longin'
+				})
+			},
+			goToChangePassword() {
+				uni.navigateTo({
+					url: '/pages/changePassword/changePassword'
+				})
+			},
 			goToUpLoadFilePage() {
 				// 使用 uni.navigateTo 方法跳转到注册页面
 				uni.navigateTo({
