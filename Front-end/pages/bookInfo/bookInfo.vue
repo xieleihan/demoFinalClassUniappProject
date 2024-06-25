@@ -9,7 +9,7 @@
 						<text class="bookTitle">{{ book.booktitle }}</text>
 						<text class="bookInfo">{{ book.bookinfo }}</text>
 					</view>
-					<button type="warn" @click="deleteBook">删除</button>
+					<button type="warn" @click="deleteBook(book.id)">删除</button>
 				</view>
 			</scroll-view>
 		</view>
@@ -47,6 +47,22 @@
 					},
 					fail: (error) => {
 						console.error('Error fetching books:', error);
+					}
+				});
+			},
+			deleteBook(id) {
+				uni.request({
+					url: `http://localhost:9807/bookinfo/delete/${id}`,
+					method: 'DELETE',
+					success: (response) => {
+						if (response.statusCode === 200 && response.data === '书籍信息删除成功') {
+							this.books = this.books.filter(book => book.id !== id);
+						} else {
+							console.error('Error deleting book:', response);
+						}
+					},
+					fail: (error) => {
+						console.error('Error deleting book:', error);
 					}
 				});
 			}

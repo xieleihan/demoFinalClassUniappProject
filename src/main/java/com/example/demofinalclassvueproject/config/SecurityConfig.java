@@ -20,7 +20,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/register", "/login").permitAll() // 允许所有人访问注册和登录端点
                         .requestMatchers("/user/getUserPic").permitAll()
-                        .requestMatchers("/bookinfo/upload","/bookinfo/search","/bookinfo/books").permitAll()
+                        .requestMatchers("/bookinfo/upload","/bookinfo/search","/bookinfo/books","/bookinfo/delete/**").permitAll()
                         .requestMatchers("/updata/updatePassword").permitAll()
                         .requestMatchers("/adminuser/login","/adminuser/register").permitAll()
 //                        .requestMatchers("/bookinfo/search").permitAll()

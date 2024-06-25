@@ -54,6 +54,17 @@ public class BookInfoController {
         return jdbcTemplate.query(sql, new BookInfoRowMapper());
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteBook(@PathVariable int id) {
+        String sql = "DELETE FROM bookinfo WHERE id = ?";
+        int rows = jdbcTemplate.update(sql, id);
+        if (rows > 0) {
+            return "书籍信息删除成功";
+        } else {
+            return "书籍信息删除失败";
+        }
+    }
+
     private static class BookInfoRowMapper implements RowMapper<BookInfo> {
         @Override
         public BookInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
