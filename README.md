@@ -88,14 +88,14 @@ idea运行`DemoFinalClassVueProjectApplication.java`这个文件,然后在Hbuild
 
 ## 项目运行截图
 
-<div align="center">
-    <img src="./pubilcImages/1.png" alt="登录页" style="zoom:25%;" />
-    <img src="./pubilcImages/2.png" style="zoom:25%;" alt="注册页"/>
-    <img src="./pubilcImages/3.png" alt="首页" style="zoom:25%"; />
-    <img src="./pubilcImages/4.png" alt="搜索" style="zoom:25%;" />
-    <img src="./pubilcImages/5.png" alt="关于" style="zoom:25%;" />
-    <img src="./pubilcImages/6.png" alt="上传文件" style="zoom:25%;" />
-    <img src="./pubilcImages/7.png" alt="管理员页面" style="zoom:25%;" />
+<div align="left">
+    <img src="./publicImages/1.png" alt="登录页" style="zoom:25%;" />
+    <img src="./publicImages/2.png" alt="注册页" style="zoom:25%;" />
+    <img src="./publicImages/3.png" alt="首页" style="zoom:25%;" />
+    <img src="./publicImages/4.png" alt="搜索" style="zoom:25%;" />
+    <img src="./publicImages/5.png" alt="关于" style="zoom:25%;" />
+    <img src="./publicImages/6.png" alt="上传文件" style="zoom:25%;" />
+    <img src="./publicImages/7.png" alt="管理员页面" style="zoom:25%;" />
 </div>
 
 ## 项目须知
