@@ -43,5 +43,15 @@ create table bookinfo(
     bookinfo varchar(200) not null
 );
 select * from bookinfo;
+
+-- 管理员信息
+drop table if exists `adminuser`;
+create table adminuser(
+	id int auto_increment primary key,
+    adminname varchar(100) not null,
+    adminpsw varchar(300) not null
+);
+select * from adminuser;
+-- insert into `adminuser` values (1,'finalyears','$2a$10$RQIlwhLvXQIz3Z0MOQx7Wee5QWbqKUPE2r5PU4OZyhcMHXN91d3R2');
 ```
 
