@@ -71,7 +71,7 @@
 	"vueVersion": "3",
 	"h5": {
 		"devServer": {
-			"port": 9808
+			"port": 2281
 		},
 		"title": "云上书库"
 	}

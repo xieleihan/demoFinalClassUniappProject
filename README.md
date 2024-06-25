@@ -20,7 +20,8 @@
     </div>
 2. 后端
 	`Java`+`Springboot`+`Mybatis`
-	<div align="left">
+	
+   <div align="left">
     <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="45" alt="Java logo"  />
     <img width="6" />
     <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="45" alt="spring logo"  />
@@ -87,9 +88,15 @@ idea运行`DemoFinalClassVueProjectApplication.java`这个文件,然后在Hbuild
 
 ## 项目运行截图
 
-待加入
-
-
+<div align="center">
+    <img src="./pubilcImages/1.png" alt="登录页" style="zoom:25%;" />
+    <img src="./pubilcImages/2.png" style="zoom:25%;" alt="注册页"/>
+    <img src="./pubilcImages/3.png" alt="首页" style="zoom:25%"; />
+    <img src="./pubilcImages/4.png" alt="搜索" style="zoom:25%;" />
+    <img src="./pubilcImages/5.png" alt="关于" style="zoom:25%;" />
+    <img src="./pubilcImages/6.png" alt="上传文件" style="zoom:25%;" />
+    <img src="./pubilcImages/7.png" alt="管理员页面" style="zoom:25%;" />
+</div>
 
 ## 项目须知
 

@@ -17,7 +17,7 @@
 		methods: {
 			signinAdmin() {
 				uni.request({
-					url: 'http://localhost:9807/adminuser/register',
+					url: 'http://localhost:2282/adminuser/register',
 					method: 'POST',
 					data: {
 						username: this.adminName,

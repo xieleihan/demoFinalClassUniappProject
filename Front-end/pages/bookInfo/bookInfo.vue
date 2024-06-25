@@ -30,7 +30,7 @@
 		methods: {
 			fetchBooks() {
 				uni.request({
-					url: 'http://localhost:9807/bookinfo/books',
+					url: 'http://localhost:2282/bookinfo/books',
 					method: 'GET',
 					success: (response) => {
 						if (response.statusCode === 200) {
@@ -52,7 +52,7 @@
 			},
 			deleteBook(id) {
 				uni.request({
-					url: `http://localhost:9807/bookinfo/delete/${id}`,
+					url: `http://localhost:2282/bookinfo/delete/${id}`,
 					method: 'DELETE',
 					success: (response) => {
 						if (response.statusCode === 200 && response.data === '书籍信息删除成功') {

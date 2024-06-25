@@ -45,7 +45,7 @@
 			},
 			upLoad() {
 				uni.request({
-					url: 'http://localhost:9807/bookinfo/upload', // 后端上传图片的接口
+					url: 'http://localhost:2282/bookinfo/upload', // 后端上传图片的接口
 					method: 'POST',
 					data: {
 						bookpic: this.base64Image,

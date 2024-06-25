@@ -26,7 +26,7 @@
 			registerUser() {
 				console.log('用户输入：', this.user);
 				uni.request({
-					url: 'http://localhost:9807/register',
+					url: 'http://localhost:2282/register',
 					method: 'POST',
 					data: this.user,
 					header: {

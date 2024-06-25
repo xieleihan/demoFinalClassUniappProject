@@ -32,7 +32,7 @@
 			loginUser() {
 				console.log('用户输入：', this.username, this.password);
 				uni.request({
-					url: 'http://localhost:9807/login',
+					url: 'http://localhost:2282/login',
 					method: 'POST',
 					data: {
 						username: this.username,

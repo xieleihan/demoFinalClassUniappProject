@@ -25,7 +25,7 @@
 		methods: {
 			fetchResults() {
 				uni.request({
-					url: `http://localhost:9807/bookinfo/search?query=${this.query}`,
+					url: `http://localhost:2282/bookinfo/search?query=${this.query}`,
 
 					method: 'GET',
 					success: (res) => {

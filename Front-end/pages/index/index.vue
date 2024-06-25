@@ -13,44 +13,14 @@
 		<view class="bigTitle">云上书库</view>
 		<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper"
 			@scrolltolower="lower" @scroll="scroll">
-			<view class="item">
-				<view class="images"></view>
+			<view v-for="book in books" :key="book.id" class="item">
+				<image :src="book.bookpic" class="images" mode="aspectFit" />
 				<view class="bookInfo">
-					<view class="title">你好</view>
-					<view class="info">
-						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
-					</view>
-				</view>
-			</view>
-			<view class="item">
-				<view class="images"></view>
-				<view class="bookInfo">
-					<view class="title">你好</view>
-					<view class="info">
-						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
-					</view>
-				</view>
-			</view>
-			<view class="item">
-				<view class="images"></view>
-				<view class="bookInfo">
-					<view class="title">你好</view>
-					<view class="info">
-						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
-					</view>
-				</view>
-			</view>
-			<view class="item">
-				<view class="images"></view>
-				<view class="bookInfo">
-					<view class="title">你好</view>
-					<view class="info">
-						你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你...
-					</view>
+					<text class="title">{{ book.booktitle }}</text>
+					<text class="info">{{ book.bookinfo }}</text>
 				</view>
 			</view>
 		</scroll-view>
-
 	</view>
 </template>
 
@@ -63,8 +33,13 @@
 				autoplay: true,
 				interval: 2000,
 				duration: 500,
-				images: [] // 初始化为空数组
+				images: [], // 初始化为空数组
+				books: [],
+				scrollTop: 0
 			}
+		},
+		onLoad() {
+			this.fetchBooks();
 		},
 		mounted() {
 			this.generateRandomImages();
@@ -76,6 +51,41 @@
 					const randomNum = Math.floor(Math.random() * 100); // 生成随机数
 					this.images.push(`${baseUrl}?${randomNum}`);
 				}
+			},
+			fetchBooks() {
+				uni.request({
+					url: 'http://localhost:2282/bookinfo/books',
+					method: 'GET',
+					success: (response) => {
+						if (response.statusCode === 200) {
+							this.books = response.data.map(book => {
+								const imageUrl = `data:image/png;base64,${book.bookpic}`;
+								return {
+									...book,
+									bookpic: imageUrl
+								};
+							});
+							console.log('Books fetched successfully:', this.books);
+						} else {
+							console.error('Error fetching books:', response);
+						}
+					},
+					fail: (error) => {
+						console.error('Error fetching books:', error);
+					}
+				});
+			},
+			upper() {
+				// 滑动到顶部时的处理函数
+				console.log('Scrolled to the top');
+			},
+			lower() {
+				// 滑动到底部时的处理函数
+				console.log('Scrolled to the bottom');
+			},
+			scroll() {
+				// 滑动过程中触发的处理函数
+				console.log('Scrolling');
 			}
 		}
 	}

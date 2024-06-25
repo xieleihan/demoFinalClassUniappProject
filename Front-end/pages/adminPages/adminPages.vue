@@ -21,7 +21,7 @@
 			submitLognin() {
 				console.log('用户输入：', this.adminName, this.adminPsw);
 				uni.request({
-					url: 'http://localhost:9807/adminuser/login',
+					url: 'http://localhost:2282/adminuser/login',
 					method: 'POST',
 					data: {
 						username: this.adminName,

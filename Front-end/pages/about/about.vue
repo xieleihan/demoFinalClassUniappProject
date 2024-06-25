@@ -36,8 +36,9 @@
 			},
 			goToLogninPages() {
 				uni.navigateTo({
-					url: '/pages/Longin/Longin'
-				})
+						url: '/pages/Longin/Longin'
+					}),
+					uni.clearStorage()
 			},
 			goToChangePassword() {
 				uni.navigateTo({
@@ -57,7 +58,7 @@
 			},
 			fetchUserPic() {
 				uni.request({
-					url: `http://localhost:9807/user/getUserPic?username=${this.username}`, // 将参数直接拼接在 URL 中，使用模板字符串
+					url: `http://localhost:2282/user/getUserPic?username=${this.username}`, // 将参数直接拼接在 URL 中，使用模板字符串
 					method: 'GET',
 					success: (res) => {
 						if (res.data && res.data.length > 0) {

@@ -30,7 +30,7 @@
 					return;
 				}
 				uni.request({
-					url: 'http://localhost:9807/updata/updatePassword', // 这里填写你的后端URL
+					url: 'http://localhost:2282/updata/updatePassword', // 这里填写你的后端URL
 					method: 'POST',
 					data: {
 						tel: this.tel,
