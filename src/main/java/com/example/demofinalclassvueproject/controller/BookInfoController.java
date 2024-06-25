@@ -48,6 +48,12 @@ public class BookInfoController {
         return jdbcTemplate.query(sql, new Object[]{likeQuery}, new BookInfoRowMapper());
     }
 
+    @GetMapping("/books")
+    public List<BookInfo> getAllBooks() {
+        String sql = "SELECT * FROM bookinfo";
+        return jdbcTemplate.query(sql, new BookInfoRowMapper());
+    }
+
     private static class BookInfoRowMapper implements RowMapper<BookInfo> {
         @Override
         public BookInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
