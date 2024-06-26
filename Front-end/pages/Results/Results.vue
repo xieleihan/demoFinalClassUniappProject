@@ -4,6 +4,7 @@
 			<image :src="book.bookpic" class="bookImage" mode="aspectFit" />
 			<view class="bookDetails">
 				<text class="bookTitle">{{ book.booktitle }}</text>
+				<br />
 				<text class="bookInfo">{{ book.bookinfo }}</text>
 			</view>
 		</view>
@@ -47,21 +48,37 @@
 
 <style scoped>
 	.resultsMain {
-		padding: 20px;
+		padding: 30rpx;
+		width: 100dvw;
+		height: calc(100dvh - 90rpx);
 	}
 
 	.bookItem {
-		margin-bottom: 20px;
+		width: 50%;
+		height: 40%;
+		border: 1px #ccc solid;
+		position: relative;
 	}
 
 	.bookImage {
-		width: 100px;
-		height: 100px;
+		width: 300rpx;
+		height: 300rpx;
 		object-fit: cover;
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px #ccc solid;
+		padding: 20rpx;
+		border-radius: 20rpx;
 	}
 
 	.bookDetails {
-		margin-left: 10px;
+		position: absolute;
+		top: 80%;
+		left: 40%;
+		transform: translate(-50%, -50%);
+		margin-top: 20rpx;
 	}
 
 	.bookTitle {

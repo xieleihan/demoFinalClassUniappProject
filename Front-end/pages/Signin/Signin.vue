@@ -61,11 +61,11 @@
 </script>
 
 <style scoped>
-	@font-face {
+	/* @font-face {
 		font-family: 'zk';
-		/* 字体名称 */
-		src: url('/static/font/zk.ttf;') format('truetype');
-	}
+		
+		src: url('/static/font/zk.ttf') format('truetype');
+	} */
 
 	.main {
 		width: 100dvw;
