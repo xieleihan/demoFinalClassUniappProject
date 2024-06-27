@@ -2,7 +2,8 @@
 	<view class="main">
 		<view class="content">
 			<view class="top">
-				<view class="topAvatar" :style="{ backgroundImage: 'url(' + userPic + ')' }"></view>
+				<view class="topAvatar" :style="{ backgroundImage: 'url(' + userPic + ')' }" @click="goTochangTopPic">
+				</view>
 				<view class="userNameInfo">{{ username }}</view>
 			</view>
 			<view class="setting">
@@ -29,6 +30,11 @@
 			this.fetchUserPic();
 		},
 		methods: {
+			goTochangTopPic() {
+				uni.navigateTo({
+					url: '/pages/changTopPic/changTopPic'
+				})
+			},
 			goToAdminPages() {
 				uni.navigateTo({
 					url: '/pages/adminPages/adminPages'

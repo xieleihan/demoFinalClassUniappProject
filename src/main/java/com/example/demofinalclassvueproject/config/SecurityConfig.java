@@ -23,6 +23,7 @@ public class SecurityConfig {
                         .requestMatchers("/bookinfo/upload","/bookinfo/search","/bookinfo/books","/bookinfo/delete/**").permitAll()
                         .requestMatchers("/updata/updatePassword").permitAll()
                         .requestMatchers("/adminuser/login","/adminuser/register").permitAll()
+                        .requestMatchers("/usertoppic").permitAll()
 //                        .requestMatchers("/bookinfo/search").permitAll()
                         .anyRequest().authenticated() // 其他请求需要身份验证
                 )
