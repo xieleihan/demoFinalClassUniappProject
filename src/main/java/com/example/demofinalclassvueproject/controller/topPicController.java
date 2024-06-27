@@ -19,13 +19,14 @@ public class topPicController {
     public String upload(@RequestBody Map<String, String> request) {
         String username = request.get("username");
         String base64Image = request.get("pic");
+        // System.out.println(base64Image);
         saveUserInfo(username, base64Image);
         return "上传成功";
     }
 
     public void saveUserInfo(String username, String base64Image) {
-        byte[] imageBytes = Base64.getDecoder().decode(base64Image);
         String sql = "INSERT INTO userinfo (username, pic) VALUES (?, ?)";
-        jdbcTemplate.update(sql, username, imageBytes);
+        jdbcTemplate.update(sql, username, base64Image);
     }
 }
+

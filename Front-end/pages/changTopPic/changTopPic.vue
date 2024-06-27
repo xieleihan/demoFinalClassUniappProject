@@ -41,6 +41,10 @@
 				reader.readAsDataURL(file);
 			},
 			upload() {
+				const requestData = {
+					username: this.username,
+					pic: this.base64Image
+				};
 				uni.request({
 					url: 'http://localhost:2282/usertoppic', // 后端上传图片的接口
 					method: 'POST',
@@ -48,11 +52,13 @@
 						username: localStorage.getItem('username'),
 						pic: this.base64Image
 					},
+
 					header: {
 						'Content-Type': 'application/json' // 设置请求头
 					},
 					success: (res) => {
 						console.log('图片上传成功:', res);
+						console.log('Upload data:', requestData);
 						uni.showToast({
 							title: '上传成功',
 							icon: 'success',
